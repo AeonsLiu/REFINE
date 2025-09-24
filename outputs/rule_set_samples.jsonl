@@ -1,0 +1,49 @@
+"### Rule Set 1:
+- **If Diagnosis = 0**, then:
+  - (MMSE > 18.77) OR
+  - (PhysicalActivity ≤ 3.41 AND Smoking > 0.50) OR
+  - (PhysicalActivity > 3.41 AND ADL > 3.18) OR
+  - (MMSE ≤ 15.64 AND DiastolicBP ≤ 85.00 AND DietQuality ≤ 2.75)
+
+- **If Diagnosis = 1**, then:
+  - (MMSE ≤ 18.77) AND
+  - ((PhysicalActivity ≤ 3.41 AND Smoking ≤ 0.50) OR
+     (PhysicalActivity > 3.41 AND ADL ≤ 3.18) OR
+     (DiastolicBP > 85.00 OR (DiastolicBP ≤ 85.00 AND DietQuality > 2.75)))
+
+
+### Rule set 2
+#### Final Rule for Diagnosis = 0:
+- If Diagnosis = 0, then **MMSE > 16.20**, **ADL > 3.18**, **DiastolicBP <= 85.00**, and **DietQuality <= 2.75**.
+
+#### Final Rule for Diagnosis = 1:
+- If Diagnosis = 1, then **MMSE <= 16.20**, **ADL <= 3.18**, **DiastolicBP > 85.00 or DietQuality > 2.75**, **PhysicalActivity <= 3.41**, and **Smoking <= 0.50**.
+
+
+### Rule Set 3:
+#### Final Rules:
+- **If Diagnosis = 0**, then MMSE > 16.20 and (PhysicalActivity > 3.41 or ADL > 3.18 or Smoking > 0.50) and DiastolicBP ≤ 85.00 and DietQuality ≤ 2.75
+- **If Diagnosis = 1**, then MMSE ≤ 16.20 and (PhysicalActivity ≤ 3.41 or ADL ≤ 3.18) and DiastolicBP > 85.00 and DietQuality > 2.75
+
+
+### Rule Set 4:
+**Diagnosis = 1:**
+- If `MMSE <= 18.77` and:
+  - `PhysicalActivity <= 3.41` and `Smoking <= 0.50`
+  - Or `PhysicalActivity > 3.41` and `ADL <= 3.18`
+  - Or `DiastolicBP <= 85.00` and `DietQuality > 2.75`
+  - Or `DiastolicBP > 85.00`
+
+**Diagnosis = 0:**
+- If `MMSE > 18.77`
+- Or `MMSE <= 18.77` and:
+  - `PhysicalActivity <= 3.41` and `Smoking > 0.50`
+  - Or `PhysicalActivity > 3.41` and `ADL > 3.18`
+  - Or `DiastolicBP <= 85.00` and `DietQuality <= 2.75`
+
+
+### Rule Set 5:
+- **If Diagnosis = 1, then** MMSE <= 18.77 and (PhysicalActivity <= 3.41 or Smoking <= 0.50 or ADL <= 3.18 or DietQuality > 2.75 or DiastolicBP > 85.00).
+- **If Diagnosis = 0, then** MMSE > 15.64 and (Smoking > 0.50 or ADL > 3.18 or DietQuality <= 2.75 or DiastolicBP <= 85.00).
+
+"
